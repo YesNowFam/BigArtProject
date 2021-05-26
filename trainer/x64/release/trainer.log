@@ -1,0 +1,29 @@
+﻿  computescore.cpp
+C:\Users\ugail\Downloads\spmallick learnopencv master ImageMetrics\C++\computescore.cpp(7,389): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\ugail\Downloads\spmallick learnopencv master ImageMetrics\C++\computescore.cpp(9,381): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\ugail\Downloads\spmallick learnopencv master ImageMetrics\C++\computescore.cpp(61,17): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\ugail\Downloads\spmallick learnopencv master ImageMetrics\C++\computescore.cpp(66,27): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ugail\Downloads\spmallick learnopencv master ImageMetrics\C++\computescore.cpp(78,12): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  svm.cpp
+  trainModel.cpp
+  brisque.cpp
+C:\Users\ugail\source\repos\trainer\trainer\brisque.cpp(14,37): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\ugail\source\repos\trainer\trainer\brisque.cpp(23,77): warning C4244: 'argument': conversion from 'double' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=int
+          ]
+C:\Users\ugail\source\repos\trainer\trainer\brisque.cpp(23,31): warning C4244: 'argument': conversion from 'double' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=int
+          ]
+C:\Users\ugail\source\repos\trainer\trainer\brisque.cpp(147,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\ugail\source\repos\trainer\trainer\brisque.cpp(148,21): warning C4305: 'initializing': truncation from 'double' to 'float'
+  trainer.cpp
+C:\Users\ugail\source\repos\trainer\trainer\trainer.cpp(1,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 559 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  trainer.vcxproj -> C:\Users\ugail\source\repos\trainer\x64\Release\trainer.exe
