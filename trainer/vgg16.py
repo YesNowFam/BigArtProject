@@ -26,9 +26,10 @@ def compute_features(path):
     image = preprocess_input(image)
     return model.predict(image)[0]
 
-def train_model():
+def train_model(n):
     
-    n = 180 #int(input("n: "))
+    #n = 180
+    #int(input("n: "))
     with open("scores.txt", "r") as s:
         scores = s.readlines()
         
@@ -62,8 +63,8 @@ def test_measure(path):
 
 
     features = compute_features(path)
-    y = features
-    #y = [0]
+    #y = features
+    y = [0]
     
     # pre loaded lists from C++ Module to rescale brisquefeatures vector to [-1, 1]
     #min_= [0.336999 ,0.019667 ,0.230000 ,-0.125959 ,0.000167 ,0.000616 ,0.231000 ,-0.125873 ,0.000165 ,0.000600 ,0.241000 ,-0.128814 ,0.000179 ,0.000386 ,0.243000 ,-0.133080 ,0.000182 ,0.000421 ,0.436998 ,0.016929 ,0.247000 ,-0.200231 ,0.000104 ,0.000834 ,0.257000 ,-0.200017 ,0.000112 ,0.000876 ,0.257000 ,-0.155072 ,0.000112 ,0.000356 ,0.258000 ,-0.154374 ,0.000117 ,0.000351]
@@ -124,7 +125,29 @@ def test_measure(path):
 
     return qualityscore
 
-#sys.argv[1]
-#train_model()
-for i in range(180):
-    print (i,"Score of the given image: {}".format(test_measure(f"images\{i}.bmp"))) 
+if __name__ == "__main__":
+    print()
+    try:
+        if sys.argv[1] == "--r":
+            try:
+                if sys.argv[2].isnumeric():
+                    train_model(int(sys.argv[2]))
+                else:
+                    print("Please enter the number of images to train")
+            except IndexError:
+                print("Please enter the number of images to train")
+        elif sys.argv[1] == "--t":
+            try:
+                score = test_measure(f"{sys.argv[2]}")
+                print("Score of the given image: {}".format(score))
+            except IndexError:
+                print("Please enter the path of the image to test")
+        else:
+            print("Please specify the mode\n--r train\n--t test")
+    except IndexError:
+        print("Please enter arguments\n--r (train) + num of imgs\n--t (test) + img path")
+
+    #sys.argv[1]
+    #train_model()
+    #for i in range(180):
+        #print (i,"Score of the given image: {}".format(test_measure(f"images\{i}.bmp"))) 
